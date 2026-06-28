@@ -1,0 +1,1416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Behroz Asghar · Strategic Designer · Personal Brand & Identity</title>
+<meta name="description" content="Clean, premium design for founders, coaches and personal brands. LinkedIn design, brand identity, landing pages and creative portfolio work." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Montserrat:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   TOKENS
+   ========================================================= */
+:root{
+  --bg: #f7f5f0;
+  --bg-soft: #fbfaf6;
+  --bg-alt: #efe9dc;
+  --ink: #0a0a0a;
+  --ink-2: #2a2a2a;
+  --muted: #6b6b66;
+  --line: rgba(13,13,13,.08);
+  --line-strong: rgba(13,13,13,.14);
+  --gold: #b8924a;
+  --gold-soft: #d8b674;
+  --gold-tint: rgba(184,146,74,.12);
+  --gold-line: rgba(184,146,74,.35);
+  --glass: rgba(255,255,255,.55);
+  --glass-strong: rgba(255,255,255,.74);
+  --shadow-sm: 0 2px 8px rgba(13,13,13,.04), 0 12px 30px rgba(13,13,13,.05);
+  --shadow-md: 0 4px 12px rgba(13,13,13,.06), 0 24px 60px rgba(13,13,13,.08);
+  --shadow-lg: 0 8px 20px rgba(13,13,13,.07), 0 40px 90px rgba(13,13,13,.10);
+  --radius: 18px;
+  --radius-lg: 26px;
+  --radius-pill: 999px;
+  --container: 1200px;
+  --gap: 28px;
+  --section-pad: 96px;
+  --contact-bg: #ece5d6;
+  --serif: 'Playfair Display', Georgia, serif;
+  --heading: 'Instrument Serif', 'Playfair Display', Georgia, serif;
+  --sans: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --strong: 'Montserrat', system-ui, -apple-system, sans-serif;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--sans);
+  font-weight:400;
+  color:var(--ink);
+  background:var(--bg);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+h1,h2,h3,h4{margin:0;font-weight:500;letter-spacing:-.01em;line-height:1.1}
+p{margin:0}
+
+/* ambient bg */
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background:
+    radial-gradient(60% 40% at 12% 8%, rgba(184,146,74,.10), transparent 60%),
+    radial-gradient(50% 35% at 88% 30%, rgba(184,146,74,.07), transparent 60%),
+    radial-gradient(40% 30% at 50% 100%, rgba(184,146,74,.05), transparent 60%);
+  pointer-events:none;z-index:0;
+}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 28px;position:relative;z-index:1}
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav{
+  position:sticky;top:14px;z-index:50;
+  padding:0 28px;
+}
+.nav-inner{
+  max-width:var(--container);
+  margin:0 auto;
+  position:relative;
+  display:flex;align-items:center;gap:24px;
+  padding:11px 14px 11px 22px;
+  background:var(--glass-strong);
+  backdrop-filter:saturate(140%) blur(18px);
+  -webkit-backdrop-filter:saturate(140%) blur(18px);
+  border:1px solid var(--line);
+  border-radius:var(--radius-pill);
+  box-shadow:var(--shadow-sm);
+}
+.brand{
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--strong);
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.brand .brand-mark{color:var(--ink)}
+.brand .brand-accent{color:var(--gold);font-weight:900}
+
+.nav-links{display:flex;gap:4px;margin-left:18px}
+.nav-links a{
+  font-family:var(--strong);
+  font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-2);
+  padding:9px 14px;border-radius:var(--radius-pill);
+  transition:.25s ease;
+}
+.nav-links a:hover{color:var(--gold);background:var(--gold-tint)}
+.nav-cta{margin-left:auto;display:flex;align-items:center;gap:10px}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 26px;border-radius:var(--radius-pill);
+  font-family:var(--strong);
+  font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  transition:.3s ease;white-space:nowrap;line-height:1;
+}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:0 8px 20px rgba(13,13,13,.16)}
+.btn-primary:hover{background:var(--gold);color:#fff;transform:translateY(-2px);box-shadow:0 12px 26px rgba(184,146,74,.30)}
+.btn-ghost{border:1px solid var(--line-strong);background:transparent;color:var(--ink)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#fff;box-shadow:0 8px 20px rgba(184,146,74,.26)}
+.btn-gold:hover{background:var(--ink);transform:translateY(-2px)}
+.btn .arrow{transition:transform .3s}
+.btn:hover .arrow{transform:translate(3px,-3px)}
+
+.nav-toggle{display:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line-strong)}
+.nav-toggle span{display:block;width:18px;height:1.5px;background:var(--ink);margin:4px auto;transition:.3s}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative;
+  padding:34px 0 0;
+  text-align:center;
+  scroll-margin-top:90px;
+}
+.h1{
+  font-family:var(--heading);
+  font-size:clamp(40px, 5.4vw, 74px);
+  font-weight:400;
+  line-height:1.06;
+  letter-spacing:-.01em;
+  max-width:none;
+  margin:0 auto;
+}
+.h1 .italic{font-style:italic;color:var(--gold)}
+.h1 .stroke{
+  -webkit-text-stroke:1px var(--ink);
+  color:transparent;
+  font-style:italic;
+}
+.hero-intro{
+  max-width:540px;margin:16px auto 0;
+  font-size:15.5px;line-height:1.6;color:var(--muted);font-weight:400;
+}
+
+.hero-visual{
+  position:relative;
+  width:min(470px, 56vw);
+  aspect-ratio:1;
+  margin:24px auto 0;
+}
+.hero-visual .gold-circle{
+  position:absolute;inset:0;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #e6c989, var(--gold) 55%, #8a6b34 100%);
+  box-shadow:0 30px 80px rgba(184,146,74,.35), inset 0 -20px 60px rgba(0,0,0,.15);
+}
+.hero-visual .gold-circle::after{
+  content:"";position:absolute;inset:-18px;border-radius:50%;
+  border:1px dashed var(--gold-line);
+  animation:spin 60s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-img{
+  position:absolute;
+  inset:0;
+  width:100%;height:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  z-index:2;
+  filter:drop-shadow(0 20px 40px rgba(0,0,0,.18));
+}
+
+/* floating cards */
+.float-card{
+  position:absolute;z-index:3;
+  background:var(--glass-strong);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:15px 20px;
+  box-shadow:var(--shadow-md);
+  display:flex;align-items:center;gap:13px;
+  font-family:var(--strong);
+  font-size:13.5px;font-weight:600;letter-spacing:.02em;
+  animation:float 6s ease-in-out infinite;
+  white-space:nowrap;
+}
+.float-card .ic{
+  width:36px;height:36px;border-radius:9px;
+  background:var(--gold-tint);color:var(--gold);
+  display:grid;place-items:center;
+  font-size:16px;font-family:var(--sans);
+}
+.float-card.fc-1{top:4%;left:-22%;animation-delay:-1s}
+.float-card.fc-2{top:13%;right:-24%;animation-delay:-3s}
+.float-card.fc-3{top:47%;left:-30%;animation-delay:-2s}
+.float-card.fc-4{top:41%;right:-30%;animation-delay:-1.5s}
+.float-card.fc-5{bottom:13%;left:-24%;animation-delay:-2.5s}
+.float-card.fc-6{bottom:4%;right:-20%;animation-delay:-3.5s}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+/* =========================================================
+   MARQUEE (full-width divider)
+   ========================================================= */
+.marquee{
+  position:relative;
+  background:#0a0a0a;
+  overflow:hidden;
+  padding:22px 0;
+  border-top:1px solid rgba(184,146,74,.4);
+  border-bottom:1px solid rgba(184,146,74,.4);
+  z-index:2;
+}
+.marquee::before,.marquee::after{
+  content:"";position:absolute;top:0;bottom:0;width:120px;
+  pointer-events:none;z-index:2;
+}
+.marquee::before{left:0;background:linear-gradient(90deg, #0a0a0a, transparent)}
+.marquee::after{right:0;background:linear-gradient(-90deg, #0a0a0a, transparent)}
+.marquee-track{
+  display:flex;align-items:center;
+  width:max-content;
+  animation:marquee-scroll 38s linear infinite;
+}
+.marquee-content{
+  display:flex;align-items:center;gap:54px;
+  padding-right:54px;
+  flex-shrink:0;
+  font-family:var(--strong);
+  font-size:17px;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:#fff;
+}
+.marquee-content .sep{color:var(--gold);font-size:13px;letter-spacing:0}
+@keyframes marquee-scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* =========================================================
+   SECTION SHELL
+   ========================================================= */
+section{padding:var(--section-pad) 0;position:relative;scroll-margin-top:100px}
+.section-alt::before{
+  content:"";position:absolute;top:0;bottom:0;left:calc(-50vw + 50%);
+  width:100vw;background:var(--bg-alt);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  z-index:-1;
+}
+.section-head{max-width:760px;margin:0 auto 52px;text-align:center}
+.section-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--strong);
+  font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;
+}
+/* decorative side-lines removed globally */
+.section-eyebrow::before,.section-eyebrow::after{display:none !important;content:none !important}
+.section-h2{
+  font-family:var(--heading);
+  font-size:clamp(40px, 5vw, 66px);
+  font-weight:400;line-height:1.04;letter-spacing:-.01em;
+}
+.section-h2 .italic{font-style:italic;color:var(--gold)}
+.section-sub{margin-top:14px;color:var(--muted);font-size:16.5px;line-height:1.45}
+.gold-line{width:48px;height:2px;background:var(--gold);margin:18px auto 0;border-radius:2px}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+#about{
+  display:flex;
+  align-items:center;
+  min-height:720px;
+  padding-top:88px;
+  padding-bottom:88px;
+}
+#about > .about-grid{width:100%}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;
+  align-items:stretch;
+}
+.about-visual{
+  position:relative;
+  min-height:560px;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow-lg);
+  background:
+    radial-gradient(circle at 20% 18%, rgba(216,182,116,.35), transparent 50%),
+    radial-gradient(circle at 78% 82%, rgba(184,146,74,.22), transparent 55%),
+    linear-gradient(160deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+.ab-meta,.ab-meta-r{
+  position:absolute;top:26px;
+  font-family:var(--strong);
+  font-size:10.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);z-index:3;
+}
+.ab-meta{left:26px}
+.ab-meta-r{right:26px}
+.ab-tag{
+  position:absolute;bottom:84px;left:50%;transform:translateX(-50%);
+  font-family:var(--strong);
+  font-size:10.5px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  color:rgba(255,255,255,.7);z-index:3;white-space:nowrap;
+}
+.about-visual .badge{
+  position:absolute;left:24px;bottom:24px;
+  padding:10px 18px;border-radius:var(--radius-pill);
+  background:rgba(255,255,255,.95);color:var(--ink);
+  font-family:var(--strong);
+  font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  backdrop-filter:blur(10px);
+  z-index:3;
+}
+.about-visual .ab-photo{
+  position:absolute;inset:0;
+  width:100%;height:100%;max-width:none;
+  object-fit:cover;object-position:center;
+  z-index:1;
+  filter:none;transform:none;
+}
+/* scrim so the overlaid labels stay readable over the photo */
+.about-visual::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.06) 28%, rgba(0,0,0,.10) 62%, rgba(0,0,0,.55) 100%);
+}
+.about-text{display:flex;flex-direction:column;justify-content:center}
+.about-text .section-h2{text-align:left}
+.about-text .section-eyebrow{align-self:flex-start;margin-bottom:12px}
+.about-text .lead{margin-top:18px;color:var(--muted);font-size:16.5px;max-width:520px;line-height:1.65}
+
+.about-points{display:grid;gap:14px;margin-top:30px}
+.about-point{
+  display:flex;gap:18px;align-items:flex-start;
+  padding:22px 24px;
+  background:var(--glass);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  backdrop-filter:blur(14px);
+  transition:.3s ease;
+}
+.about-point:hover{border-color:var(--gold-line);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.about-point .num{
+  font-family:var(--serif);font-style:italic;font-size:22px;color:var(--gold);
+  min-width:34px;line-height:1.2;
+}
+.about-point h4{font-family:var(--strong);font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
+.about-point p{font-size:14.5px;color:var(--muted);line-height:1.6}
+
+/* =========================================================
+   SELECTED WORK
+   ========================================================= */
+#work{
+  display:flex;flex-direction:column;justify-content:center;
+  min-height:720px;
+  padding-top:88px;
+  padding-bottom:88px;
+}
+.portfolio-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);
+  align-items:stretch;
+}
+.work{
+  position:relative;border-radius:var(--radius-lg);overflow:hidden;
+  background:var(--glass-strong);
+  border:1px solid var(--line);
+  box-shadow:0 18px 50px rgba(13,13,13,.05);
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  display:flex;flex-direction:column;height:100%;
+  text-decoration:none;color:inherit;
+}
+.work:hover{transform:translateY(-6px);box-shadow:0 24px 70px rgba(13,13,13,.09);border-color:var(--gold-line)}
+/* thumbnail */
+.work .thumb{
+  position:relative;
+  width:100%;aspect-ratio:16/9;overflow:hidden;flex-shrink:0;
+  background:#f5f1e8;
+  border-bottom:1px solid var(--line);
+}
+.work .thumb img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:top center;
+  display:block;
+  filter:none;transform:none;image-rendering:auto;backface-visibility:hidden;
+}
+/* content */
+.work .meta{
+  padding:32px;
+  display:flex;flex-direction:column;flex:1;
+}
+.work .cat{
+  display:inline-block;
+  font-family:var(--strong);
+  font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;
+}
+.work h3{font-family:var(--serif);font-size:23px;font-weight:500;margin-bottom:12px;line-height:1.25}
+.work p{font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.65;flex:1}
+.work .view{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--strong);
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink);
+  padding-bottom:4px;border-bottom:1.5px solid var(--ink);
+  transition:.3s;
+  margin-top:auto;align-self:flex-start;
+}
+.work:hover .view{color:var(--gold);border-color:var(--gold)}
+
+/* =========================================================
+   PORTFOLIO & FREEBIES
+   ========================================================= */
+#portfolio{
+  display:flex;flex-direction:column;justify-content:center;
+  min-height:680px;
+  padding-top:80px;
+  padding-bottom:80px;
+}
+#portfolio .section-head{margin-bottom:52px}
+#portfolio .section-h2{line-height:1.05}
+#portfolio .section-sub{margin-top:14px;line-height:1.5}
+.pf-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
+.pf-card{
+  display:flex;flex-direction:column;overflow:hidden;position:relative;height:100%;
+  background:var(--glass-strong);border:1px solid var(--line);
+  border-radius:var(--radius-lg);backdrop-filter:blur(14px);
+  transition:.4s ease;
+}
+.pf-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--gold-line)}
+.pf-card .pf-imgwrap{
+  width:100%;height:320px;overflow:hidden;flex-shrink:0;
+  border-bottom:1px solid var(--line);background:var(--bg-alt);
+}
+.pf-card .pf-img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+  filter:none;transform:none;
+  image-rendering:auto;
+  backface-visibility:hidden;
+}
+.pf-card .pf-body{padding:36px 36px 38px;display:flex;flex-direction:column;flex:1}
+.pf-card .pf-tag{
+  font-family:var(--strong);font-size:10.5px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;
+}
+.pf-card h3{font-family:var(--serif);font-size:28px;font-weight:500;margin-bottom:14px;line-height:1.2}
+.pf-card p{font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:30px;flex:1}
+.pf-card .btn{align-self:flex-start;margin-top:auto}
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+#services{
+  display:flex;flex-direction:column;justify-content:center;
+  min-height:720px;
+  padding-top:88px;
+  padding-bottom:88px;
+}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);align-items:stretch}
+.service{
+  padding:40px 34px;
+  background:var(--glass-strong);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  backdrop-filter:blur(14px);
+  position:relative;overflow:hidden;height:100%;
+  transition:.35s ease;
+  display:flex;flex-direction:column;
+}
+.service::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;z-index:2;
+  background:linear-gradient(90deg,var(--gold),var(--gold-soft));
+  transform:scaleX(0);transform-origin:left;transition:.45s ease;
+}
+.service:hover::before{transform:scaleX(1)}
+.service:hover{transform:translateY(-6px);border-color:var(--gold-line);box-shadow:var(--shadow-md)}
+.service .s-ico{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:54px;height:54px;margin-bottom:22px;
+  border-radius:16px;
+  background:var(--gold-tint);color:var(--gold);
+}
+.service .s-ico svg{
+  width:26px;height:26px;display:block;
+  fill:none;stroke:currentColor;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.service h3{font-family:var(--serif);font-size:25px;font-weight:500;margin-bottom:14px;line-height:1.22}
+.service p{font-size:14.5px;color:var(--muted);margin-bottom:26px;line-height:1.65;flex:1}
+.service .learn{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--strong);
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink);transition:.3s;
+  position:relative;z-index:1;align-self:flex-start;
+}
+.service:hover .learn{color:var(--gold)}
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
+#process{
+  display:flex;flex-direction:column;justify-content:center;
+  min-height:610px;
+  padding-top:80px;
+  padding-bottom:80px;
+}
+.process{
+  position:relative;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:26px;
+  padding-top:46px;
+}
+/* dotted connector running between the number badges */
+.process::before{
+  content:"";position:absolute;top:52px;left:12.5%;right:12.5%;height:0;
+  border-top:2px dotted var(--gold-line);
+  z-index:0;
+}
+.step{
+  position:relative;z-index:1;
+  padding:58px 26px 34px;
+  text-align:center;
+  background:var(--glass-strong);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  backdrop-filter:blur(14px);
+  box-shadow:var(--shadow-sm);
+}
+/* Process steps are intentionally static — no hover motion */
+.step,.step:hover,.step .num{
+  transition:none !important;
+  transform:none !important;
+  animation:none !important;
+}
+.step:hover{box-shadow:var(--shadow-sm);border-color:var(--line)}
+.step .num{transform:translateX(-50%) !important}
+.step .num{
+  position:absolute;top:-32px;left:50%;transform:translateX(-50%);
+  width:76px;height:76px;border-radius:50%;
+  display:grid;place-items:center;
+  font-family:var(--serif);font-size:30px;font-style:italic;font-weight:500;
+  color:#fff;
+  background:radial-gradient(circle at 35% 30%, var(--gold-soft), var(--gold) 70%);
+  border:4px solid var(--bg);
+  box-shadow:0 12px 30px rgba(184,146,74,.32);
+}
+.step .step-label{
+  display:block;margin-bottom:10px;
+  font-family:var(--strong);
+  font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+}
+.step h4{font-family:var(--serif);font-size:22px;font-weight:500;margin-bottom:12px}
+.step p{font-size:14.5px;color:var(--muted);line-height:1.65;max-width:230px;margin:0 auto}
+
+/* =========================================================
+   TESTIMONIALS
+   ========================================================= */
+#testimonials{
+  display:flex;flex-direction:column;justify-content:center;
+  padding-top:80px;
+  padding-bottom:80px;
+}
+.rec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap);align-items:stretch}
+.rec-card{
+  padding:34px;
+  background:var(--glass-strong);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  backdrop-filter:blur(14px);
+  position:relative;height:100%;
+  display:flex;flex-direction:column;
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.rec-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--gold-line)}
+/* Option C — featured first recommendation spans the full row */
+.rec-card--featured{
+  grid-column:1 / -1;
+  padding:42px;
+  border-color:var(--gold-line);
+  box-shadow:var(--shadow-md);
+}
+.rec-card--featured .rec-text{font-size:16.5px;line-height:1.78}
+@media (min-width:721px){
+  .rec-card--featured .rec-text{column-count:2;column-gap:42px}
+}
+.rec-li{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;
+  font-family:var(--strong);font-size:11px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+}
+.rec-li .li-badge{
+  width:22px;height:22px;border-radius:5px;flex-shrink:0;
+  background:#0a66c2;color:#fff;
+  display:grid;place-items:center;
+  font-family:var(--strong);font-weight:700;font-size:11px;letter-spacing:0;
+  text-transform:lowercase;
+}
+.rec-card .rec-text{
+  margin:0 0 26px;
+  font-size:15.5px;line-height:1.72;color:var(--ink-2);
+  font-weight:400;flex:1;
+}
+.rec-text p{margin:0 0 14px}
+.rec-text p:last-child{margin-bottom:0}
+.rec-author{display:flex;align-items:center;gap:14px;padding-top:22px;border-top:1px solid var(--line);margin-top:auto}
+.rec-avatar{
+  width:46px;height:46px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--gold-soft),var(--gold));
+  color:#fff;display:grid;place-items:center;
+  font-family:var(--serif);font-weight:600;font-size:18px;
+  border:2px solid #fff;box-shadow:0 0 0 1px var(--gold-line);
+}
+.rec-name{font-family:var(--strong);font-size:13.5px;font-weight:700;letter-spacing:.04em}
+.rec-role{
+  font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.rec-meta{
+  display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;
+  font-size:11.5px;color:var(--muted);
+}
+.rec-meta span{display:inline-flex;align-items:center;gap:6px}
+.rec-meta .rel{color:var(--gold);font-weight:600}
+.rec-link{
+  display:inline-flex;align-items:center;gap:6px;margin-top:18px;
+  font-family:var(--strong);font-size:11px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
+  text-decoration:none;align-self:flex-start;transition:color .25s ease;
+}
+.rec-link:hover{color:var(--gold)}
+.rec-foot{text-align:center;margin-top:46px}
+.rec-foot a{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--strong);font-size:12.5px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--gold);
+  text-decoration:none;border-bottom:1.5px solid var(--gold-line);
+  padding-bottom:5px;transition:.25s ease;
+}
+.rec-foot a:hover{border-color:var(--gold)}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+#faq{
+  display:flex;flex-direction:column;justify-content:center;
+  padding-top:80px;
+  padding-bottom:80px;
+}
+#faq .section-head{margin-bottom:48px}
+/* FAQ + Contact share one cohesive closing background */
+#faq.section-alt::before,#cta.section-alt::before{background:var(--contact-bg)}
+.faq-list{max-width:820px;margin:0 auto;display:grid;gap:16px}
+.faq{
+  background:rgba(255,255,255,.78);
+  border:1px solid var(--line);
+  border-radius:20px;
+  backdrop-filter:blur(14px);
+  box-shadow:0 14px 40px rgba(13,13,13,.05);
+  overflow:hidden;
+  transition:.3s ease;
+}
+.faq:hover{transform:translateY(-2px);border-color:var(--gold-line);box-shadow:var(--shadow-md)}
+.faq[open]{border-color:var(--gold-line);box-shadow:var(--shadow-md);background:rgba(255,255,255,.92)}
+.faq summary{
+  list-style:none;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:24px 28px;cursor:pointer;
+  font-family:var(--strong);
+  font-size:15px;font-weight:600;line-height:1.35;letter-spacing:.01em;color:var(--ink);
+  transition:.2s;
+}
+.faq summary:hover{color:var(--gold)}
+.faq summary::-webkit-details-marker{display:none}
+.faq .icn{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--gold-tint);color:var(--gold);
+  display:grid;place-items:center;font-size:19px;font-weight:300;
+  border:1px solid var(--gold-line);
+  transition:.3s;flex-shrink:0;
+}
+.faq[open] .icn{transform:rotate(45deg);background:var(--gold);color:#fff}
+.faq .ans{padding:0 28px 26px;color:var(--muted);font-size:15px;line-height:1.6;max-width:680px}
+
+/* =========================================================
+   CONTACT / CTA
+   ========================================================= */
+#cta{
+  display:flex;flex-direction:column;justify-content:center;
+  padding-top:80px;
+  padding-bottom:80px;
+}
+.cta-box{
+  position:relative;
+  padding:84px 60px;
+  text-align:center;
+  background:var(--glass-strong);
+  border:1px solid var(--gold-line);
+  border-radius:var(--radius-lg);
+  backdrop-filter:blur(18px);
+  overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.cta-box::before,.cta-box::after{
+  content:"";position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;
+}
+.cta-box::before{width:260px;height:260px;background:var(--gold);top:-80px;left:-80px}
+.cta-box::after{width:300px;height:300px;background:var(--gold-soft);bottom:-100px;right:-80px}
+.cta-box .inner{position:relative;z-index:1}
+.cta-box .gold-line{margin:24px auto 28px}
+.cta-h{
+  font-family:var(--heading);
+  font-size:clamp(40px,5.2vw,64px);
+  font-weight:400;line-height:1.06;letter-spacing:-.01em;
+  max-width:820px;margin:0 auto;
+}
+.cta-h .italic{font-style:italic;color:var(--gold)}
+.cta-sub{margin:22px auto 36px;color:var(--muted);font-size:16.5px;max-width:560px;line-height:1.6}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer{
+  padding:84px 0 34px;
+  border-top:1px solid var(--line);
+  position:relative;z-index:1;
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;
+  margin-bottom:40px;
+}
+.footer-brand h3{
+  font-family:var(--strong);
+  font-weight:900;font-size:24px;letter-spacing:.06em;text-transform:uppercase;
+  margin-bottom:14px;
+}
+.footer-brand h3 .accent{color:var(--gold)}
+.footer-brand p{color:var(--muted);font-size:14px;max-width:300px;line-height:1.65}
+.footer-col h5{
+  font-family:var(--strong);
+  font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;
+}
+.footer-col ul{list-style:none;padding:0;margin:0;display:grid;gap:11px}
+.footer-col a{font-size:14px;color:var(--ink-2);transition:.2s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bot{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:26px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--muted);
+}
+.footer-bot .made{display:flex;align-items:center;gap:6px}
+.footer-bot .made .dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1024px){
+  :root{--section-pad:76px}
+  .portfolio-grid,.services-grid{grid-template-columns:repeat(2,1fr)}
+  .rec-grid{grid-template-columns:repeat(2,1fr)}
+  .process{grid-template-columns:repeat(2,1fr);row-gap:60px}
+  .process::before{display:none}
+  #about,#work,#portfolio,#services,#process{min-height:auto;padding-top:var(--section-pad);padding-bottom:var(--section-pad)}
+  .about-grid{grid-template-columns:1fr;gap:48px;max-width:620px;margin:0 auto}
+  .about-visual{min-height:0;aspect-ratio:4/5;max-height:660px}
+  .about-text{justify-content:flex-start}
+  .about-text .section-h2,.about-text .section-eyebrow{text-align:center}
+  #testimonials,#faq,#cta{padding-top:var(--section-pad);padding-bottom:var(--section-pad)}
+  .footer-grid{grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+  .footer-brand{grid-column:1 / -1}
+}
+
+@media (max-width: 720px){
+  :root{--section-pad:58px;--gap:18px}
+  .nav-links,.nav-cta .btn{display:none}
+  .nav-toggle{display:block}
+  .nav-inner{padding:9px 10px 9px 16px}
+
+  body.nav-open .nav-links{
+    display:flex;flex-direction:column;gap:2px;margin-left:0;
+    position:absolute;top:calc(100% + 10px);left:0;right:0;
+    background:var(--glass-strong);
+    backdrop-filter:saturate(140%) blur(18px);
+    -webkit-backdrop-filter:saturate(140%) blur(18px);
+    border:1px solid var(--line);border-radius:20px;padding:12px;
+    box-shadow:var(--shadow-md);z-index:60;
+  }
+  body.nav-open .nav-links a{padding:14px 16px;border-radius:12px}
+  body.nav-open .nav-toggle span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+  body.nav-open .nav-toggle span:nth-child(2){opacity:0}
+  body.nav-open .nav-toggle span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+  .brand{font-size:15px}
+
+  .hero{padding:24px 0 0}
+  .float-card{display:none}
+  .hero-visual{width:min(320px,80vw);margin:22px auto 0}
+  .hero-intro{font-size:15px;padding:0 4px;margin-top:14px}
+
+  .marquee{padding:16px 0}
+  .marquee-content{font-size:13px;gap:34px;padding-right:34px}
+  .marquee::before,.marquee::after{width:56px}
+
+  .portfolio-grid,.services-grid,.rec-grid,.process,.pf-grid{grid-template-columns:1fr}
+  .rec-card--featured{padding:30px 24px}
+  .rec-card--featured .rec-text{font-size:15.5px;line-height:1.72}
+  .process{row-gap:48px}
+  .section-head{margin-bottom:46px}
+
+  .footer-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .footer-brand{grid-column:1 / -1}
+  .footer-bot{flex-direction:column;gap:10px;text-align:center}
+
+  .cta-box{padding:52px 24px}
+  .cta-actions{flex-direction:column;gap:10px;align-items:stretch}
+  .cta-actions .btn{justify-content:center}
+
+  .container{padding:0 20px}
+  .nav{padding:0 14px;top:10px}
+  .work .meta{padding:26px 24px}
+  .work h3{font-size:21px}
+  .service{padding:30px 26px}
+  .service h3{font-size:23px}
+  .pf-card .pf-body{padding:28px 26px 30px}
+  .pf-card h3{font-size:25px}
+  .h1{max-width:18ch}
+  .h1 br{display:none}
+  .h1 .stroke{-webkit-text-stroke-width:.8px}
+  .step{padding:0 16px}
+  .rec-card{padding:28px 24px}
+  .about-visual{aspect-ratio:3/4;max-height:580px}
+
+  /* CTAs: full-width and easy to tap */
+  .cta-actions .btn{width:100%;justify-content:center;min-height:48px}
+
+  /* keep headings readable, not oversized, on small screens */
+  .h1{font-size:clamp(34px,9vw,46px);line-height:1.05}
+  .section-h2{font-size:clamp(32px,8.5vw,44px);line-height:1.05}
+  .cta-h{font-size:clamp(32px,8.5vw,44px)}
+  .section-sub{font-size:15px}
+}
+
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease, transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .float-card,.gold-circle::after,.marquee-track{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     NAV
+     ========================================================= -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span><span class="brand-mark">Behroz</span><span class="brand-accent">.</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Recommendations</a>
+      <a href="#cta">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://wa.me/923390038791?text=Hi%20Behroz%2C%20I%20want%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Let’s Work Together <span class="arrow">↗</span></a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<header id="top" class="hero">
+  <div class="container">
+    <h1 class="h1">
+      I Design LinkedIn Profiles<br>
+      That Turn <span class="italic">Scrollers</span> Into <span class="stroke">Clients.</span>
+    </h1>
+
+    <p class="hero-intro">
+      I help coaches, founders, solopreneurs and service providers build a LinkedIn
+      presence that looks premium, trusted and client-ready.
+    </p>
+
+    <div class="hero-visual">
+      <div class="gold-circle"></div>
+      <img src="https://i.postimg.cc/qqLmQv8d/Behroz-Picture-Photoroom.png" alt="Behroz Asghar, LinkedIn & Personal Brand Designer" class="hero-img" loading="eager">
+      <div class="float-card fc-1"><span class="ic">in</span>LinkedIn Branding</div>
+      <div class="float-card fc-2"><span class="ic">✦</span>Profile Optimised</div>
+      <div class="float-card fc-3"><span class="ic">◆</span>Banner Designed</div>
+      <div class="float-card fc-4"><span class="ic">▤</span>Featured Graphics</div>
+      <div class="float-card fc-5"><span class="ic">✶</span>Brand System Done</div>
+      <div class="float-card fc-6"><span class="ic">→</span>Client-Ready Profile</div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE (full-width divider) -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-content">
+      <span>LinkedIn Branding</span><span class="sep">●</span>
+      <span>Personal Brand Design</span><span class="sep">●</span>
+      <span>Portfolio Design</span><span class="sep">●</span>
+      <span>Landing Page Design</span><span class="sep">●</span>
+      <span>Brand Identity</span><span class="sep">●</span>
+    </div>
+    <div class="marquee-content">
+      <span>LinkedIn Branding</span><span class="sep">●</span>
+      <span>Personal Brand Design</span><span class="sep">●</span>
+      <span>Portfolio Design</span><span class="sep">●</span>
+      <span>Landing Page Design</span><span class="sep">●</span>
+      <span>Brand Identity</span><span class="sep">●</span>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     ABOUT
+     ========================================================= -->
+<section id="about" class="container section-alt">
+  <div class="about-grid">
+    <div class="about-visual reveal">
+      <div class="ab-meta">Behroz Asghar</div>
+      <div class="ab-meta-r">Designer · Est 2018</div>
+      <img class="ab-photo" src="https://i.postimg.cc/BbKhhVQm/PXL-20260502-085839948.jpg" alt="Behroz Asghar, Strategic Designer" loading="lazy">
+      <div class="ab-tag">Strategy · Design · Brand</div>
+      <div class="badge">Premium Personal Brand</div>
+    </div>
+
+    <div class="about-text reveal">
+      <div class="section-eyebrow">About</div>
+      <h2 class="section-h2">Design that looks <span class="italic">premium</span> and feels clear.</h2>
+      <p class="lead">
+        I do not just make things look nice. I design personal brand visuals that help
+        people understand who you are, what you offer and why they should trust you.
+      </p>
+
+      <div class="about-points">
+        <div class="about-point">
+          <span class="num">01</span>
+          <div>
+            <h4>Clear positioning</h4>
+            <p>Your profile says what you do and who it's for, in seconds.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <span class="num">02</span>
+          <div>
+            <h4>Premium visual style</h4>
+            <p>Clean type, balanced layouts and small details that signal quality.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <span class="num">03</span>
+          <div>
+            <h4>Client-ready profile design</h4>
+            <p>Every piece is built to look trusted and easy to say yes to.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SELECTED WORK
+     ========================================================= -->
+<section id="work" class="container">
+  <div class="section-head reveal">
+    <div class="section-eyebrow">Selected Projects</div>
+    <h2 class="section-h2">A few projects, designed <span class="italic">with intention.</span></h2>
+    <p class="section-sub">A small sample of recent LinkedIn and personal brand design work.</p>
+  </div>
+
+  <div class="portfolio-grid">
+    <a class="work reveal" href="https://www.behance.net/gallery/211182391/Social-Media-Post-V1" target="_blank" rel="noopener noreferrer">
+      <div class="thumb"><img src="images/projects/social-media-post-v1.jpg" alt="Social Media Post V1" loading="lazy"></div>
+      <div class="meta">
+        <span class="cat">Social Media Design</span>
+        <h3>Social Media Post V1</h3>
+        <p>A clean set of social media visuals designed with bold hierarchy and modern layout direction.</p>
+        <span class="view">View Project →</span>
+      </div>
+    </a>
+    <a class="work reveal" href="https://www.behance.net/gallery/251471999/Alpha-Leon" target="_blank" rel="noopener noreferrer">
+      <div class="thumb"><img src="images/projects/alpha-leon.jpg" alt="Alpha Leon" loading="lazy"></div>
+      <div class="meta">
+        <span class="cat">Brand Identity</span>
+        <h3>Alpha Leon</h3>
+        <p>A bold visual identity system created for a strong and premium brand presence.</p>
+        <span class="view">View Project →</span>
+      </div>
+    </a>
+    <a class="work reveal" href="https://www.behance.net/gallery/251468437/Linkedin-Personal-Branding" target="_blank" rel="noopener noreferrer">
+      <div class="thumb"><img src="images/projects/linkedin-personal-branding.jpg" alt="Linkedin Personal Branding" loading="lazy"></div>
+      <div class="meta">
+        <span class="cat">LinkedIn Branding</span>
+        <h3>Linkedin Personal Branding</h3>
+        <p>A personal brand design system built to make a LinkedIn profile look clear, trusted, and client-ready.</p>
+        <span class="view">View Project →</span>
+      </div>
+    </a>
+    <a class="work reveal" href="https://www.behance.net/gallery/251372189/RevsetLabs" target="_blank" rel="noopener noreferrer">
+      <div class="thumb"><img src="images/projects/revsetlabs.jpg" alt="RevsetLabs" loading="lazy"></div>
+      <div class="meta">
+        <span class="cat">Brand Identity</span>
+        <h3>RevsetLabs</h3>
+        <p>A modern brand identity project focused on clean visuals, strong typography, and premium presentation.</p>
+        <span class="view">View Project →</span>
+      </div>
+    </a>
+    <a class="work reveal" href="https://www.behance.net/gallery/161815867/WELFARE-FOUNDATION-SOCIAL-MEDIA-DESIGNS" target="_blank" rel="noopener noreferrer">
+      <div class="thumb"><img src="images/projects/welfare-foundation.jpg" alt="Welfare Foundation Social Media Designs" loading="lazy"></div>
+      <div class="meta">
+        <span class="cat">Social Media Campaign</span>
+        <h3>Welfare Foundation Social Media Designs</h3>
+        <p>Social media designs created for a welfare foundation with clear messaging and strong visual structure.</p>
+        <span class="view">View Project →</span>
+      </div>
+    </a>
+    <a class="work reveal" href="https://www.behance.net/gallery/251469713/IIBI-Social-Media-Campaign" target="_blank" rel="noopener noreferrer">
+      <div class="thumb"><img src="images/projects/iibi-social-media-campaign.jpg" alt="IIBI Social Media Campaign" loading="lazy"></div>
+      <div class="meta">
+        <span class="cat">Social Media Campaign</span>
+        <h3>IIBI Social Media Campaign</h3>
+        <p>A campaign design system with consistent layouts, clean branding, and scroll-stopping social visuals.</p>
+        <span class="view">View Project →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- =========================================================
+     PORTFOLIO & FREEBIES
+     ========================================================= -->
+<section id="portfolio" class="container section-alt">
+  <div class="section-head reveal">
+    <div class="section-eyebrow">Portfolio &amp; Freebies</div>
+    <h2 class="section-h2">See my work or grab a <span class="italic">free resource.</span></h2>
+    <p class="section-sub">Browse selected projects, or download a free LinkedIn branding resource.</p>
+  </div>
+
+  <div class="pf-grid">
+    <div class="pf-card reveal">
+      <div class="pf-imgwrap">
+        <img class="pf-img" src="https://i.postimg.cc/gkGRt7JP/Form-Feature-Section-copy-6.jpg" alt="Behroz Asghar — selected Behance design projects" loading="lazy">
+      </div>
+      <div class="pf-body">
+        <div class="pf-tag">Selected Work</div>
+        <h3>Behance Portfolio</h3>
+        <p>See selected design projects, branding work and visual case studies in one place.</p>
+        <a href="https://www.behance.net/behrozasghar" target="_blank" rel="noopener" class="btn btn-primary">View Portfolio <span class="arrow">↗</span></a>
+      </div>
+    </div>
+    <div class="pf-card reveal">
+      <div class="pf-imgwrap">
+        <img class="pf-img" src="https://i.postimg.cc/dtJdNf1Y/Form-Feature-Section-copy-5.jpg" alt="Free LinkedIn branding resources and templates by Behroz Asghar" loading="lazy">
+      </div>
+      <div class="pf-body">
+        <div class="pf-tag">Templates &amp; Checklists</div>
+        <h3>Free Resources</h3>
+        <p>Download free LinkedIn branding resources, checklists and templates to get started.</p>
+        <a href="https://behrozasghar.gumroad.com/" target="_blank" rel="noopener" class="btn btn-gold">Get Freebies <span class="arrow">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SERVICES
+     ========================================================= -->
+<section id="services" class="container">
+  <div class="section-head reveal">
+    <div class="section-eyebrow">Services</div>
+    <h2 class="section-h2">Clean, creative design <span class="italic">services.</span></h2>
+    <p class="section-sub">Everything you need to look premium and client-ready on LinkedIn.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service reveal">
+      <span class="s-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19.5a6.5 6.5 0 0 1 13 0"/></svg></span>
+      <h3>LinkedIn Complete Branding</h3>
+      <p>Complete LinkedIn profile visuals that make your profile look clear, premium, and client-ready.</p>
+      <a href="#cta" class="learn">Learn more →</a>
+    </div>
+    <div class="service reveal">
+      <span class="s-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.2"/><path d="M3.5 8.5h17"/><path d="M6.3 6.5h.01M8.6 6.5h.01"/></svg></span>
+      <h3>Portfolio Landing Page Design</h3>
+      <p>A clean one-page portfolio website designed to show your work and build trust fast.</p>
+      <a href="#cta" class="learn">Learn more →</a>
+    </div>
+    <div class="service reveal">
+      <span class="s-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><circle cx="9" cy="9" r="1.8"/><path d="M5 17l4-4 3.2 3.2L16 12l3 3"/></svg></span>
+      <h3>Social Media Visual Design</h3>
+      <p>Scroll-stopping social media designs for brands, creators, and service providers.</p>
+      <a href="#cta" class="learn">Learn more →</a>
+    </div>
+    <div class="service reveal">
+      <span class="s-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M3 12h18"/></svg></span>
+      <h3>LinkedIn Banner Design</h3>
+      <p>A professional LinkedIn banner that clearly shows who you help and what you offer.</p>
+      <a href="#cta" class="learn">Learn more →</a>
+    </div>
+    <div class="service reveal">
+      <span class="s-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 5 5.3.4-4 3.5 1.2 5.2L12 19.8 7.3 22.6l1.2-5.2-4-3.5 5.3-.4z"/></svg></span>
+      <h3>Brand Identity Design</h3>
+      <p>A complete visual identity system with logo, colors, typography, and brand direction.</p>
+      <a href="#cta" class="learn">Learn more →</a>
+    </div>
+    <div class="service reveal">
+      <span class="s-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="8" y="5" width="8" height="14" rx="1.8"/><path d="M5.5 7.5v9"/><path d="M18.5 7.5v9"/></svg></span>
+      <h3>Carousel Design</h3>
+      <p>Clean and engaging carousel posts designed to explain ideas and keep people reading.</p>
+      <a href="#cta" class="learn">Learn more →</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PROCESS
+     ========================================================= -->
+<section id="process" class="container section-alt">
+  <div class="section-head reveal">
+    <div class="section-eyebrow">Process</div>
+    <h2 class="section-h2">How I work, <span class="italic">step by step.</span></h2>
+    <p class="section-sub">A simple, honest process. No surprises, no jargon.</p>
+  </div>
+
+  <div class="process">
+    <div class="step reveal">
+      <div class="num">01</div>
+      <span class="step-label">Step 01</span>
+      <h4>Discover</h4>
+      <p>We understand your offer, audience and goal.</p>
+    </div>
+    <div class="step reveal">
+      <div class="num">02</div>
+      <span class="step-label">Step 02</span>
+      <h4>Strategy</h4>
+      <p>We create a clear direction before starting design.</p>
+    </div>
+    <div class="step reveal">
+      <div class="num">03</div>
+      <span class="step-label">Step 03</span>
+      <h4>Design</h4>
+      <p>I design clean visuals that match your brand and message.</p>
+    </div>
+    <div class="step reveal">
+      <div class="num">04</div>
+      <span class="step-label">Step 04</span>
+      <h4>Refine</h4>
+      <p>We improve the final design until it feels right.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TESTIMONIALS
+     ========================================================= -->
+<section id="testimonials" class="container">
+  <div class="section-head reveal">
+    <div class="section-eyebrow">LinkedIn Recommendations</div>
+    <h2 class="section-h2">What people <span class="italic">recommend.</span></h2>
+    <p class="section-sub">Real recommendations from my LinkedIn profile.</p>
+  </div>
+
+  <!-- Cards are rendered from the `linkedinRecommendations` array in the script
+       at the bottom of the page (real LinkedIn recommendations). Add or edit
+       entries there, or later wire it up to a JSON file, Google Sheet, Notion,
+       Sanity, or Airtable. -->
+  <div class="rec-grid" id="rec-grid"></div>
+
+  <div class="rec-foot reveal">
+    <a href="https://www.linkedin.com/in/behrozasghar/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer">View all recommendations on LinkedIn →</a>
+  </div>
+</section>
+
+<!-- =========================================================
+     FAQ
+     ========================================================= -->
+<section id="faq" class="container section-alt">
+  <div class="section-head reveal">
+    <div class="section-eyebrow">FAQs</div>
+    <h2 class="section-h2">Honest answers, <span class="italic">no fluff.</span></h2>
+    <p class="section-sub">The things people usually ask before we start.</p>
+  </div>
+
+  <div class="faq-list">
+    <details class="faq reveal">
+      <summary>What do I need to start? <span class="icn">+</span></summary>
+      <div class="ans">Your LinkedIn profile link, brand colours if you have them, your offer and any inspiration you like.</div>
+    </details>
+    <details class="faq reveal">
+      <summary>How long does it take? <span class="icn">+</span></summary>
+      <div class="ans">Most small projects take a few days. Full branding projects may take longer depending on the scope.</div>
+    </details>
+    <details class="faq reveal">
+      <summary>Can you design only a LinkedIn banner? <span class="icn">+</span></summary>
+      <div class="ans">Yes, you can start with only a banner if you do not need the full profile branding.</div>
+    </details>
+    <details class="faq reveal">
+      <summary>Do you provide editable files? <span class="icn">+</span></summary>
+      <div class="ans">Yes, Canva or design source files can be provided depending on the package.</div>
+    </details>
+    <details class="faq reveal">
+      <summary>Is this for beginners? <span class="icn">+</span></summary>
+      <div class="ans">Yes. I keep the process simple and guide you step by step.</div>
+    </details>
+    <details class="faq reveal">
+      <summary>Do you write the content too? <span class="icn">+</span></summary>
+      <div class="ans">I can help improve the messaging and structure, but the main focus is design and branding.</div>
+    </details>
+  </div>
+</section>
+
+<!-- =========================================================
+     CTA
+     ========================================================= -->
+<section id="cta" class="container section-alt">
+  <div class="cta-box reveal">
+    <div class="inner">
+      <div class="section-eyebrow">Contact</div>
+      <h2 class="cta-h">Ready to make your brand look <span class="italic">unmistakably yours?</span></h2>
+      <div class="gold-line"></div>
+      <p class="cta-sub">
+        Let's design a LinkedIn presence that looks premium, feels clear and helps
+        people trust you faster.
+      </p>
+      <div class="cta-actions">
+        <a href="https://wa.me/923390038791?text=Hi%20Behroz%2C%20I%20want%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Let’s Work Together <span class="arrow">↗</span></a>
+        <a href="#work" class="btn btn-ghost">View My Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>BEHROZ<span class="accent">.</span></h3>
+        <p>Strategic design for founders, coaches and personal brands.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Selected Projects</a></li>
+          <li><a href="#portfolio">Portfolio &amp; Freebies</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Recommendations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/behrozasghar/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.behance.net/behrozasghar" target="_blank" rel="noopener">Behance</a></li>
+          <li><a href="https://www.pinterest.com/behrozasghar7/" target="_blank" rel="noopener">Pinterest</a></li>
+          <li><a href="https://medium.com/@behrozasghar7" target="_blank" rel="noopener">Medium</a></li>
+          <li><a href="https://behrozasghar.gumroad.com/" target="_blank" rel="noopener">Gumroad</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Work With Me</h5>
+        <ul>
+          <li><a href="https://www.fiverr.com/users/behrozasghar" target="_blank" rel="noopener">Fiverr</a></li>
+          <li><a href="https://upwork.com/freelancers/behrozasghar" target="_blank" rel="noopener">Upwork</a></li>
+          <li><a href="https://wa.me/923390038791" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="mailto:behrozasghar7@gmail.com">behrozasghar7@gmail.com</a></li>
+          <li><a href="https://wa.me/923390038791?text=Hi%20Behroz%2C%20I%20want%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer">Let’s Work Together</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <div>© <span id="yr">2026</span> Behroz Asghar. Strategic Designer. All rights reserved.</div>
+      <div class="made"><span class="dot"></span>Designed with intention.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const tgl = document.querySelector('.nav-toggle');
+  if (tgl) tgl.addEventListener('click', () => document.body.classList.toggle('nav-open'));
+  document.querySelectorAll('.nav-links a').forEach(a =>
+    a.addEventListener('click', () => document.body.classList.remove('nav-open')));
+
+  /* =========================================================
+     LINKEDIN RECOMMENDATIONS
+     Real recommendations from Behroz's LinkedIn profile.
+     Each item: { name, role, date, relationship, text, profileUrl, featured }
+     - `text` paragraphs are separated by a blank line (\n\n).
+     - `featured: true` renders a larger, full-width card (Option C).
+     You can later swap this array for a fetch from a JSON file,
+     Google Sheet, Notion, Sanity or Airtable.
+     ========================================================= */
+  const RECS_URL = "https://www.linkedin.com/in/behrozasghar/details/recommendations/?detailScreenTabIndex=0";
+  const linkedinRecommendations = [
+    {
+      name: "Adeel Jhatalla",
+      role: "Revenue Growth | Sales Growth | Business Development | Team Performance | Sales Team Leadership | Education | Real Estate | B2B | Practitioner | Thinker",
+      date: "October 21, 2024",
+      relationship: "Adeel was Behroz’s client",
+      featured: true,
+      text: "I had the pleasure of working with Behroz to design my LinkedIn profile photo and cover banner. I was looking for a professional yet creative design to reflect my personal brand, and Behroz exceeded my expectations.\n\nWhat impressed me the most was Behroz’s ability to understand my vision and translate it into a visually stunning and cohesive design. Creativity, attention to detail, and ability to balance professionalism with originality truly set him apart.\n\nThe profile photo was not only eye catching but also perfectly aligned with my personal brand. The cover banner was crafted to visually convey my values and approach, blending colors and design elements seamlessly.\n\nThroughout the entire process, Behroz was extremely professional, responsive, and open to feedback. He delivered everything ahead of schedule and made sure every detail was exactly how I envisioned.\n\nI really, really loved the final result, and I can’t recommend Behroz enough for anyone looking to elevate their brand through beautiful, professional design. I will definitely be working with him again.",
+      profileUrl: RECS_URL
+    },
+    {
+      name: "Aimen Asrar",
+      role: "Graduate of University of London",
+      date: "April 25, 2024",
+      relationship: "Aimen was Behroz’s client",
+      text: "I, having Behroze as the Marketing Manager within a company I was overlooking Corporate Communications for, was always aware of his positive work ethic and an appetite for learning newer things and growing. This is why I chose to sign up for his services regarding my startup. He took care of all my marketing concerns and managed my online growth very well. He listens attentively and internalises the client's vision. That saved me so much time and energy.\n\nI'd definitely recommend his marketing services to people seeking 360° solutions.",
+      profileUrl: RECS_URL
+    },
+    {
+      name: "Taimur Hassan",
+      role: "Supply Chain & Procurement Professional | Inventory Control & Logistics Operations | SAP/Oracle | Advanced Excel",
+      date: "December 25, 2023",
+      relationship: "Taimur reported to Behroz directly",
+      text: "Having worked with Behroz Asghar for over a year, I can attest to his exemplary skills as a media manager. He's consistently shown top-notch skills in his role, especially when handling a bunch of projects. I wholeheartedly recommend Behroz for his professionalism and delivery of results.",
+      profileUrl: RECS_URL
+    }
+  ];
+
+  (function renderRecommendations(){
+    const grid = document.getElementById('rec-grid');
+    if (!grid) return;
+    const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+    grid.innerHTML = linkedinRecommendations.map(r => {
+      const initial = esc((r.name || '?').trim().charAt(0).toUpperCase());
+      const paras = String(r.text || '').split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join('');
+      const meta = [
+        r.date ? `<span class="date">${esc(r.date)}</span>` : '',
+        r.relationship ? `<span class="rel">${esc(r.relationship)}</span>` : ''
+      ].join('');
+      const link = r.profileUrl
+        ? `<a class="rec-link" href="${esc(r.profileUrl)}" target="_blank" rel="noopener noreferrer">View on LinkedIn →</a>`
+        : '';
+      return `
+      <div class="rec-card reveal${r.featured ? ' rec-card--featured' : ''}">
+        <span class="rec-li"><span class="li-badge">in</span> LinkedIn Recommendation</span>
+        <div class="rec-text">${paras}</div>
+        <div class="rec-author">
+          <div class="rec-avatar">${initial}</div>
+          <div>
+            <div class="rec-name">${esc(r.name)}</div>
+            <div class="rec-role">${esc(r.role)}</div>
+            <div class="rec-meta">${meta}</div>
+          </div>
+        </div>
+        ${link}
+      </div>`;
+    }).join('');
+  })();
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
